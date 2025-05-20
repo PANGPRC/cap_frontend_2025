@@ -1,0 +1,120 @@
+# ====================
+# 通用忽略规则
+# ====================
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# 编辑器/IDE 配置
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# 日志文件
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境变量
+.env
+.env.*
+!.env.example
+
+# ====================
+# 依赖管理
+# ====================
+# Node.js
+node_modules/
+dist/
+build/
+out/
+coverage/
+
+# Composer (PHP)
+/vendor/
+
+# Maven (Java)
+target/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ====================
+# 编译输出
+# ====================
+# JavaScript 编译
+*.min.js
+*.map
+
+# 前端构建
+public/build/
+public/assets/
+public/dist/
+
+# 后端编译
+bin/
+obj/
+
+# ====================
+# 测试报告
+# ====================
+test-results/
+junit/
+*.xml
+
+# ====================
+# 敏感信息
+# ====================
+config/credentials/
+secrets/
+keys/
+*.pem
+*.key
+
+# ====================
+# 特定框架/工具
+# ====================
+# Next.js
+.next/
+.npmrc
+
+# Gatsby
+.cache/
+public/
+
+# Nuxt.js
+.nuxt/
+output/
+
+# React Native
+android/build/
+ios/build/
+*.xcworkspace
+xcuserdata/
+
+# Vue.js
+node_modules/.cache/
+vue-ssr-cache/
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Storybook
+storybook-static/
+
+# ====================
+# 自定义规则
+# ====================
+# 在这里添加项目特定的忽略规则
+# 例如：
+# uploads/
+# temp/
