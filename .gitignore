@@ -87,8 +87,8 @@ keys/
 .npmrc
 
 # Gatsby
-.cache/
-public/
+# .cache/
+# public/
 
 # Nuxt.js
 .nuxt/
