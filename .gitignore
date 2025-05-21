@@ -20,11 +20,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# 环境变量
-.env
-.env.*
-!.env.example
-
 # ====================
 # 依赖管理
 # ====================
@@ -86,10 +81,6 @@ keys/
 .next/
 .npmrc
 
-# Gatsby
-# .cache/
-# public/
-
 # Nuxt.js
 .nuxt/
 output/
@@ -110,11 +101,3 @@ cypress/screenshots/
 
 # Storybook
 storybook-static/
-
-# ====================
-# 自定义规则
-# ====================
-# 在这里添加项目特定的忽略规则
-# 例如：
-# uploads/
-# temp/
