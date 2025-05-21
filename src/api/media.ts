@@ -34,7 +34,13 @@ export async function saveMedia(body: any): Promise<IMediaBaseDTO> {
 }
 
 // 预览点播视频
-export async function previewMedia(mediaId: number): Promise<string> {
+export interface IPreviewMediaResult {
+  code: number
+  result: string
+  errMessage?: string
+}
+
+export async function previewMedia(mediaId: number): Promise<IPreviewMediaResult> {
   const { data } = await createAPI(`/media/preview/${mediaId}`, 'get')
   return data
 }

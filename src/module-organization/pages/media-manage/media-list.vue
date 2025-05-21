@@ -193,7 +193,7 @@ private async handleDownloadMedia(id: number) {
     }else{
       this.$message({
       type: 'error',
-      message: res.errMessage
+      message: res.errMessage || '未知错误'
      })
     }
       

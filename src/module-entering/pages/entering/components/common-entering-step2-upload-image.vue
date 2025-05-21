@@ -1,14 +1,13 @@
 <template>
   <div>
     <el-upload
-      action
       list-type="picture-card"
       accept=".jpg, .png, .bmp"
       :file-list="fileList"
       :before-upload="handleBeforeUpload"
       :on-success="handleUploadSuccess"
       :on-error="handleUploadError"
-      action="/api/media/upload/coursefile"
+      :action="'/api/media/upload/coursefile'"
       name="filedata"
       :on-preview="handleOnPreview"
       :on-remove="handleOnRemove"

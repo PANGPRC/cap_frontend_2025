@@ -257,13 +257,11 @@ export default class extends mixins(MixinTools) {
       //     return v
       //   })
       // }
-      if (data) {
-        data.teachPlanTreeNodes = data.map((v: any) => {
-          // this.$set(v, 'edit', false) // https://vuejs.org/v2/guide/reactivity.html
+      if (data && Array.isArray(data.teachPlanTreeNodes)) {
+        data.teachPlanTreeNodes = data.teachPlanTreeNodes.map((v: any) => {
           v.ctlEditTitle = false
           v.ctlBarShow = false
-          // 三级
-          if (v.teachPlanTreeNodes !== null) {
+          if (v.teachPlanTreeNodes !== null && Array.isArray(v.teachPlanTreeNodes)) {
             v.teachPlanTreeNodes = v.teachPlanTreeNodes.map((v: any) => {
               v.ctlEditTitle = false
               v.ctlBarShow = false
@@ -301,8 +299,8 @@ export default class extends mixins(MixinTools) {
       courseId: this.courseBaseId,
       parentid: 0,
       grade: 1,
-      pname: '新章名称 [点击修改]'
-      // mediaType: '',
+      pname: '新章名称 [点击修改]',
+      mediaType: ''
       // ctlEditTitle: false,
       // ctlBarShow: false
       // teachPlanTreeNodes: []
@@ -321,8 +319,8 @@ export default class extends mixins(MixinTools) {
       courseId: this.courseBaseId,
       parentid: parentid,
       grade: 2,
-      pname: '新小节名称 [点击修改]'
-      // mediaType: '',
+      pname: '新小节名称 [点击修改]',
+      mediaType: ''
       // isPreview: '0',
       // ctlEditTitle: false,
       // ctlBarShow: false
@@ -451,7 +449,7 @@ export default class extends mixins(MixinTools) {
       await this.showDeleteConfirm()
       await mediaUnAssociation(
         node.teachplanMedia.teachplanId,
-        node.teachplanMedia.mediaId,
+        String(node.teachplanMedia.mediaId ? node.teachplanMedia.mediaId : ''),
         this.courseBaseId
       )
       this.getList()
