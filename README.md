@@ -1,8 +1,8 @@
-# 在线学习 v2 门户页
+# 在线学习 门户页
 
 ## 项目简介
 
-本项目是“在线学习”在线学习平台的门户前端，基于 Vue 3 + TypeScript 开发，面向学员和机构用户，提供课程浏览、学习、作业、资料、订单等全流程服务。项目采用模块化设计，支持多角色切换，界面美观，交互友好。
+本项目是“在线学习”平台的门户前端，基于 Vue 3 + TypeScript 开发，面向学员和机构用户，提供课程浏览、学习、作业、资料、订单等全流程服务。项目采用模块化设计，支持多角色切换，界面美观，交互友好。
 
 ## 主要功能
 
@@ -30,9 +30,11 @@ cap_frontend_2025/
 │   ├── router/              # 路由配置
 │   ├── store/               # Vuex 状态管理
 │   ├── utils/               # 工具函数与混入
-│   ├── views/               # 主要页面视图
 │   ├── App.vue              # 根组件
 │   └── main.ts              # 应用入口文件
+├── ci/                      # 持续集成相关配置与脚本
+├── docker/                  # Docker 部署相关文件（如 Dockerfile、compose 配置等）
+├── static/                  # 额外静态资源（如第三方库、无需 Webpack 处理的文件）
 ├── .env                     # 环境变量配置
 ├── package.json             # 项目依赖与脚本
 └── README.md                # 项目说明文档
@@ -76,6 +78,15 @@ cap_frontend_2025/
 - **src/views/**  
   主要页面视图文件，按业务模块划分。
 
+- **ci/**  
+  持续集成（CI）相关配置和脚本，如自动化测试、构建、部署流程等。
+
+- **docker/**  
+  Docker 部署相关文件，包含 Dockerfile、docker-compose.yml 等，便于容器化部署和环境一致性。
+
+- **static/**  
+  额外静态资源目录，通常用于存放无需 Webpack 处理的第三方库、字体文件等。
+
 - **App.vue**  
   应用根组件。
 
@@ -85,26 +96,12 @@ cap_frontend_2025/
 - **.env**  
   环境变量配置文件（如 API 地址、Token 等）。
 
-## 相关资源
-
-- **Git 地址**  
-  <http://git.itcast.cn/development/project-xczx2-portal-vue-ts>
-
-- **接口地址**  
-  <https://mock.boxuegu.com/project/698/interface/api>
-
-- **功能表**  
-  <https://shimo.im/sheets/PVAPV2R7E9cmFVql/ryv6D>
-
-- **外网演示（非同步更新）**  
-  <http://xczx2-portal-java-dev.itheima.net>
-
 ## 自定义 `AUTHORIZATION TOKEN` 和 `API URL`
 
 修改 `.env` 文件：
 
 ```env
-VUE_APP_SERVER_API_URL=https://mock.boxuegu.com/mock/776
+VUE_APP_SERVER_API_URL=（此处填写在线Mock平台url）
 VUE_APP_SERVER_AUTHORIZATION=（此处填写你的授权 token）
 ```
 
@@ -115,7 +112,7 @@ VUE_APP_SERVER_AUTHORIZATION=（此处填写你的授权 token）
 
 2. **安装 cnpm 包管理**
    ```sh
-   npm install -g cnpm --registry=https://registry.npm.taobao.org
+   npm install -g cnpm --registry=https://registry.npmmirror.com
    ```
 
 3. **拉取依赖**
